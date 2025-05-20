@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cypress Tests 🚓
+        uses: cypress-io/github-action@v5
+        with:
+          start: "npm run dev"
+          build: "npm run build"
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-results
+          path: |
+            cypress/videos
+            cypress/screenshots
+            cypress/logs
+            cypress/reports
+          if-no-files-found: ignore
