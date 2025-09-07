@@ -1,6 +1,7 @@
 describe('template spec', () => {
   it('passes', () => {
     cy.visit('localhost:5173/')
+    cy.visit('localhost:5172/')
     cy.get('[data-qa="profile-box"]')
     cy.get('[data-qa="comment-input"]').first().type('Test 1234')
     cy.get('[data-qa="publish-button"]').first().click()
