@@ -6,5 +6,6 @@ describe('template spec', () => {
     cy.get('[data-qa="publish-button"]').first().click()
     cy.get(':nth-child(2) > [data-qa="comment-box"] > [data-qa="comment-info-box"] > [data-qa="comment-text"]').contains('Teste 123')
     cy.get(':nth-child(2) > [data-qa="comment-box"] > [data-qa="comment-info-box"] > header > [data-qa="delete-button"] > svg').click()
+    
   })
 })
