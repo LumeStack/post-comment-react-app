@@ -1,6 +1,6 @@
 describe('template spec', () => {
   it('passes', () => {
-    const commentText = 'Test 12345'
+    const commentText = 'Fazendo um teste com Cypress ' + Math.floor(Math.random() * 1000)
 
     cy.visit('localhost:5173/')
     cy.get('[data-qa="profile-box"]')
