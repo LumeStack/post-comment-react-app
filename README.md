@@ -50,4 +50,4 @@ npm run build
 
 Isso criará uma pasta `build` no diretório do projeto com os arquivos otimizados para produção.
 
-
+Atualização de testes - branch cypress-automation
