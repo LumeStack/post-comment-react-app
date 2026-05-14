@@ -1,25 +1,25 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// ─── CUSTOM COMMANDS ──────────────────────────────────────────────────────────
+
+/**
+ * @command logElements
+ * @description Percorre todos os elementos encontrados pelo seletor e exibe
+ * o texto de cada um no log do Cypress.
+ * @uso Utilize para inspecionar o conteúdo de elementos repetidos na página,
+ * como listas, cards, comentários ou qualquer conjunto de elementos similares.
+ * @exemplo
+ *   // Descomentar temporariamente para debug:
+ *   cy.get('[data-qa="comment-text"]').each(($element) => {
+ *     cy.log($element.text())
+ *   })
+ *
+ *   // Saída esperada no log:
+ *   // 0 → Primeiro comentário
+ *   // 1 → Segundo comentário
+ *   // 2 → Terceiro comentário
+ *
+ *   // Após identificar os elementos, comentar novamente o bloco.
+ */
+
+/* cy.get('[data-qa="comment-text"]').each(($element) => {
+  cy.log($element.text())
+}) */
