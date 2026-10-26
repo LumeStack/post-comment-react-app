@@ -2,13 +2,13 @@ describe('template spec', () => {
   it('passes', () => {
     cy.visit('localhost:5173/')
     cy.get('[data-qa="profile-box"]')
-    cy.get('[data-qa="comment-input"]').first().type('Test 123')
-    cy.get('[data-qa="publish-button"]').first().click()
-    cy.get('[data-qa="comment-text"]').contains('Test 123')
-    cy.get('[data-qa="comment-text"]').each(($element) => {
-      if ($element.text() === 'Test 123') {
-        cy.get($element).siblings('header').children('[data-qa="delete-button"]').click()
-      }
+    cy.get('[data-qa="comment-input"]').eq(0).type("Test 123")
+    cy.get('[type="submit"]').eq(0).click()
+    cy.contains('[data-qa="comment-box"]', "Test 123")
+    cy.contains('[data-qa="comment-box"]', "Test 123").find('[data-qa="delete-button"]').click()
+      })
     })
-  })
-})
+
+
+
+    
